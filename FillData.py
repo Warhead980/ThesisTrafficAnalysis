@@ -64,4 +64,13 @@ def FillData(df):
 
     # 4 wheeler
     df['4_wheeler']=df['4_wheeler'].fillna(0)
+    df['4_wheeler'] = df['4_wheeler'].astype(int)
+
+    # 2 wheeler
+    df['2_wheeler'] = df['2_wheeler'].fillna(0)
+    df['2_wheeler'] = df['2_wheeler'].astype(int)
+
+    # cycle
+    df['cycle'] = df['cycle'].fillna(0)
+    df['cycle'] = df['cycle'].astype(int)
     return df
