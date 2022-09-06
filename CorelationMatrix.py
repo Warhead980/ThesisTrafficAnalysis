@@ -3,6 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 def CorelationMatrix(df):
+    #df = df.iloc[:, [0, 1, 2, 3, 5, 6, 8, 9, 12, 18, 1060, 1079, 1080, 1081]]
     corr = df.corr(method='kendall')
     ax = sns.heatmap(
         corr,
