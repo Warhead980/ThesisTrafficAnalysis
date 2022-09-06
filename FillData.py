@@ -73,4 +73,5 @@ def FillData(df):
     # cycle
     df['cycle'] = df['cycle'].fillna(0)
     df['cycle'] = df['cycle'].astype(int)
+
     return df
