@@ -63,5 +63,5 @@ def FillData(df):
     df['income'] = df['income'].str.replace(',', '').astype(float).astype(int)
 
     # 4 wheeler
-    df['4_wheeler']=df['4_wheeler'].fill
+    df['4_wheeler']=df['4_wheeler'].fillna(0)
     return df
