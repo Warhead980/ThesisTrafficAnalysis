@@ -62,4 +62,6 @@ def FillData(df):
     df = df[df.income.isin(list) == False]
     df['income'] = df['income'].str.replace(',', '').astype(float).astype(int)
 
+    # 4 wheeler
+    df['4_wheeler']=df['4_wheeler'].fill
     return df
