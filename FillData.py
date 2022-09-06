@@ -12,13 +12,11 @@ def FillData(df):
     df.age = df.age.astype(float)
     df['age'] = np.ceil(df.age)
     df.age = df.age.astype(int)
-    df=df[df['age']<200]
+    df = df[df['age'] < 200]
 
     # ward filter
     df = df[df['ward'].notna()]
     df.ward = df.ward.astype(int)
-
-
 
     # set 1 extra day for MEDICAL (P)
     df.loc[df['WEEKEND_activity'].str.contains('P', case=False), ['extra_days']] += 1
@@ -41,27 +39,27 @@ def FillData(df):
 
     # work days
     df = df[df['work_days'].notna()]
-    df=df[(df['work_days']=='0') |
-            (df['work_days']=='1')|
-            (df['work_days']=='2')|
-            (df['work_days']=='3')|
-            (df['work_days']=='4')|
-            (df['work_days']=='5')|
-            (df['work_days']=='6')|
-            (df['work_days']=='7')]
+    df = df[(df['work_days'] == '0') |
+            (df['work_days'] == '1') |
+            (df['work_days'] == '2') |
+            (df['work_days'] == '3') |
+            (df['work_days'] == '4') |
+            (df['work_days'] == '5') |
+            (df['work_days'] == '6') |
+            (df['work_days'] == '7')]
     df.work_days = df.work_days.astype(int)
 
     # total work days
-    df['total_days']=df['work_days']+df['extra_days']
+    df['total_days'] = df['work_days'] + df['extra_days']
 
     # income filter
     df = df[df['income'].notna()]
 
-    df['income']=df['income'].replace(['1.5LAC', '25,M000','1 LAC', '30,M000'], ['150000','25000','100000','30000'])
+    df['income'] = df['income'].replace(['1.5LAC', '25,M000', '1 LAC', '30,M000'],
+                                        ['150000', '25000', '100000', '30000'])
 
-    list=['JAGATPUR ADARSHA BIDYA MANDIR', 'REFUSED', 'R', 'C/S', 'REFUNDED', '5', 'BALLYGUNGE']
-    df=df[df.income.isin(list) == False]
-    df['income']=df['income'].str.replace(',', '').astype(float).astype(int)
-
+    list = ['JAGATPUR ADARSHA BIDYA MANDIR', 'REFUSED', 'R', 'C/S', 'REFUNDED', '5', 'BALLYGUNGE']
+    df = df[df.income.isin(list) == False]
+    df['income'] = df['income'].str.replace(',', '').astype(float).astype(int)
 
     return df
