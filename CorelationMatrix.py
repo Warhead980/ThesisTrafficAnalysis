@@ -19,5 +19,6 @@ def CorelationMatrix(df):
         rotation=45,
         horizontalalignment='right')
 
+    print('---CORRELATION MATRIX---')
     print(corr)
     plt.show()

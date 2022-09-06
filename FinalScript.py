@@ -30,8 +30,10 @@ df = FillData(df)
 df = ToNumeric(df)
 df=ColSet(df)
 #CheckUnique(df, '4_wheeler')
-print(list(df.columns.values))
-print(df.dtypes)
-print(df.head(20))
+#print(list(df.columns.values))
+#print(df.dtypes)
+
+print('---DATA PREVIEW---')
+print(df.head(10))
 
 CorelationMatrix(df)
