@@ -10,7 +10,7 @@ from CheckUnique import *
 from ToNumeric import *
 from ColSet import *
 from CorelationMatrix import *
-
+from LinearRegressionModel import *
 
 # suppress warnings
 import warnings
@@ -36,4 +36,5 @@ df=ColSet(df)
 print('---DATA PREVIEW---')
 print(df.head(10))
 
-CorelationMatrix(df)
+#CorelationMatrix(df)
+LinReg(df)
