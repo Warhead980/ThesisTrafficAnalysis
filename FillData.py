@@ -8,7 +8,7 @@ def FillData(df):
     df.loc[df['occupation'] == 'UNEMPLOYED', 'work_days'] = 0
 
     # age filter
-    df = df[~df.age.str.contains("MONTHS|months|M")]
+    df = df[~df.age.str.contains("MONTHS|months|M", na=False)]
     df.age = df.age.astype(float)
     df['age'] = np.ceil(df.age)
     df.age = df.age.astype(int)
@@ -55,15 +55,15 @@ def FillData(df):
     # income filter
     df = df[df['income'].notna()]
 
-    df['income'] = df['income'].replace(['1.5LAC', '25,M000', '1 LAC', '30,M000','600000'],
-                                        ['150000', '25000', '100000', '30000','50000'])
+    df['income'] = df['income'].replace(['1.5LAC', '25,M000', '1 LAC', '30,M000', '600000'],
+                                        ['150000', '25000', '100000', '30000', '50000'])
 
     list = ['JAGATPUR ADARSHA BIDYA MANDIR', 'REFUSED', 'R', 'C/S', 'REFUNDED', '5', 'BALLYGUNGE']
     df = df[df.income.isin(list) == False]
     df['income'] = df['income'].str.replace(',', '').astype(float).astype(int)
 
     # 4 wheeler
-    df['4_wheeler']=df['4_wheeler'].fillna(0)
+    df['4_wheeler'] = df['4_wheeler'].fillna(0)
     df['4_wheeler'] = df['4_wheeler'].astype(int)
 
     # 2 wheeler
@@ -71,7 +71,9 @@ def FillData(df):
     df['2_wheeler'] = df['2_wheeler'].astype(int)
 
     # cycle
+    df = df[~df.cycle.str.contains('R|A|GOODS CAR', na=False)]
     df['cycle'] = df['cycle'].fillna(0)
+
     df['cycle'] = df['cycle'].astype(int)
 
     return df
