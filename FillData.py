@@ -55,8 +55,8 @@ def FillData(df):
     # income filter
     df = df[df['income'].notna()]
 
-    df['income'] = df['income'].replace(['1.5LAC', '25,M000', '1 LAC', '30,M000'],
-                                        ['150000', '25000', '100000', '30000'])
+    df['income'] = df['income'].replace(['1.5LAC', '25,M000', '1 LAC', '30,M000','600000'],
+                                        ['150000', '25000', '100000', '30000','50000'])
 
     list = ['JAGATPUR ADARSHA BIDYA MANDIR', 'REFUSED', 'R', 'C/S', 'REFUNDED', '5', 'BALLYGUNGE']
     df = df[df.income.isin(list) == False]
