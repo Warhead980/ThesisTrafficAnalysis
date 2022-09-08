@@ -40,5 +40,5 @@ print(df.dtypes)
 print('---DATA PREVIEW---')
 print(df)
 
-#CorelationMatrix(df)
-#LinReg(df)
+CorelationMatrix(df)
+LinReg(df)
