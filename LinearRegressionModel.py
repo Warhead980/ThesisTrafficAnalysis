@@ -6,7 +6,7 @@ import statsmodels.api as sm
 
 
 def LinReg(df):
-    x = df[['income', 'age', 'sex']]
+    x = df[['income', 'age', 'sex','marital_stat']]
     # x=x1[x1["income"] < 120000]
     # x = np.reshape(x, (-1, 1))
 

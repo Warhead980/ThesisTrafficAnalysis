@@ -32,13 +32,13 @@ df = FillData(df)
 df = ToNumeric(df)
 df=ColSet(df)
 
-#CheckUnique(df, 'cycle')
+CheckUnique(df, 'occupation')
 #df=df.sort_values('ID')
 print(list(df.columns.values))
 print(df.dtypes)
-
+print((df['total_days'] == 0).sum())
 print('---DATA PREVIEW---')
 print(df)
 
-CorelationMatrix(df)
-LinReg(df)
+#CorelationMatrix(df)
+#LinReg(df)

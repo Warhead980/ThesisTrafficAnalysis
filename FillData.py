@@ -2,10 +2,13 @@ def FillData(df):
     import pandas as pd
     import numpy as np
 
-    # fill occupation as UNEMPLOYED where education is ILLITERATE
-    df.loc[df['edu'] == 'IL', 'occupation'] = 'UNEMPLOYED'
+    #occupation
 
+
+    # total_days
+    df.loc[df['edu'] == 'IL', 'occupation'] = 'UNEMPLOYED'
     df.loc[df['occupation'] == 'UNEMPLOYED', 'work_days'] = 0
+    df.loc[df['occupation'] == 'HOUSEWIFE', 'work_days'] =+2
 
     # age filter
     df = df[~df.age.str.contains("MONTHS|months|M", na=False)]
