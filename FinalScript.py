@@ -32,13 +32,17 @@ df = FillData(df)
 df = ToNumeric(df)
 df=ColSet(df)
 
-CheckUnique(df, 'occupation')
+CheckUnique(df, 'work_days')
 #df=df.sort_values('ID')
 print(list(df.columns.values))
 print(df.dtypes)
-print((df['total_days'] == 0).sum())
-print('---DATA PREVIEW---')
-print(df)
+z=(df['total_days'] == 0).sum()
+print('0s in total_days ',z)
 
-#CorelationMatrix(df)
+z1=(df['occupation'] == 'BUSINESS').sum()
+#print('extras in occup ',z1)
+
+print('---DATA PREVIEW---\n',df.head(50))
+
+CorelationMatrix(df)
 #LinReg(df)
