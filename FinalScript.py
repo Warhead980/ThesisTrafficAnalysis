@@ -11,6 +11,7 @@ from ToNumeric import *
 from ColSet import *
 from CorelationMatrix import *
 from LinearRegressionModel import *
+from ipfn import *
 
 # suppress warnings
 import warnings
@@ -45,4 +46,4 @@ z1=(df['occupation'] == 'BUSINESS').sum()
 print('---DATA PREVIEW---\n',df.head(50))
 
 CorelationMatrix(df)
-#LinReg(df)
+LinReg(df)

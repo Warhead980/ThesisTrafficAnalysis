@@ -6,7 +6,7 @@ import statsmodels.api as sm
 
 
 def LinReg(df):
-    x = df[['income', 'age', 'sex','marital_stat']]
+    x = df[['income']]
     # x=x1[x1["income"] < 120000]
     # x = np.reshape(x, (-1, 1))
 
@@ -25,13 +25,13 @@ def LinReg(df):
     x = sm.add_constant(x)  # adding a constant
 
     modelOLS = sm.OLS(y, x).fit()
-    modelWLS = sm.WLS(y, x).fit()
-    modelGLS = sm.GLS(y, x).fit()
+    #modelWLS = sm.WLS(y, x).fit()
+    #modelGLS = sm.GLS(y, x).fit()
     predictions = modelOLS.predict(x)
 
     print(modelOLS.summary())
-    print(modelWLS.summary())
-    print(modelGLS.summary())
+    #print(modelWLS.summary())
+    #print(modelGLS.summary())
 
 
     '''
