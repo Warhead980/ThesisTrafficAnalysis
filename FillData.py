@@ -202,7 +202,7 @@ def FillData(df):
            (df["occupation"] == "S"), 'occupation'] = 'UNDEFINED'
 
     df['occupation'] = df['occupation'].fillna(0)
-#ierative proportonal fiting
+
     # total_days
     df.loc[df['edu'] == 'IL', 'occupation'] = 'UNEMPLOYED'
     df.loc[df['occupation'] == 'UNEMPLOYED', 'extra_days'] =+ 3

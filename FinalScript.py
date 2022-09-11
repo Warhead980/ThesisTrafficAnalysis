@@ -26,7 +26,7 @@ pd.set_option('display.max_columns', 18)
 
 
 df = ImportData()
-
+df=ipfn
 df = ColFilter(df)
 df = ColRename(df)
 df = FillData(df)
