@@ -289,7 +289,7 @@ def FillData(df):
     df['2_wheeler'] = df['2_wheeler'].astype(int)
 
     # cycle
-    df = df[~df.cycle.str.contains('R|A|GOODS CAR|B|E|V|T|SUZUKI', na=False)]
+    df = df[~df.cycle.astype(str).str.contains('R|A|GOODS CAR|B|E|V|T|SUZUKI', na=False)]
     df['cycle'] = df['cycle'].fillna(0)
 
     df['cycle'] = df['cycle'].astype(int)
