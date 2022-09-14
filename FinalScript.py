@@ -30,9 +30,7 @@ df = ImportData()
 df = ColFilter(df)
 df = ColRename(df)
 df = FillData(df)
-
 df = ToNumeric(df)
-print(df.head(10))
 df=ColSet(df)
 df=DataCategorize(df)
 
