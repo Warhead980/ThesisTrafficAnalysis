@@ -278,6 +278,8 @@ def FillData(df):
     df['income'] = df['income'].fillna(0)
     df['income'] = df['income'].astype(int)
 
+    #df.loc[df['age'] == 'UNDEFINED', 'extra_days'] = +3
+
     # 4 wheeler
     df['4_wheeler'] = df['4_wheeler'].fillna(0)
     df['4_wheeler'] = df['4_wheeler'].astype(int)

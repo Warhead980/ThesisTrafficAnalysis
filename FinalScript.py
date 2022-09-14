@@ -9,6 +9,7 @@ from FillData import *
 from CheckUnique import *
 from ToNumeric import *
 from ColSet import *
+from DataCategorize import *
 from CorelationMatrix import *
 from LinearRegressionModel import *
 from ipfn import *
@@ -26,13 +27,14 @@ pd.set_option('display.max_columns', 18)
 
 
 df = ImportData()
-df=ipfn
 df = ColFilter(df)
 df = ColRename(df)
 df = FillData(df)
 df = ToNumeric(df)
 df=ColSet(df)
+df=DataCategorize(df)
 
+'''
 CheckUnique(df, 'work_days')
 #df=df.sort_values('ID')
 print(list(df.columns.values))
@@ -47,3 +49,4 @@ print('---DATA PREVIEW---\n',df.head(50))
 
 CorelationMatrix(df)
 LinReg(df)
+'''
