@@ -1,10 +1,9 @@
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-def CorelationMatrix(df):
 
-    df = df.iloc[:, [0,1,2,3,4,5,6,7,8,9,12]]
+def CorelationMatrix(df):
+    df = df.iloc[:, [0, 2, 3, 4, 5, 6, 8, 12, 15]]
 
     corr = df.corr(method='kendall').round(3)
     ax = sns.heatmap(

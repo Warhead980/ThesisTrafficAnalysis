@@ -31,8 +31,12 @@ df = ColFilter(df)
 df = ColRename(df)
 df = FillData(df)
 df = ToNumeric(df)
-df=ColSet(df)
 df=DataCategorize(df)
+df=ColSet(df)
+
+print(df.head(20))
+CorelationMatrix(df)
+print(df.head(20))
 
 '''
 CheckUnique(df, 'work_days')
